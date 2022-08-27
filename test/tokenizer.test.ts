@@ -1,5 +1,6 @@
 import { test, expect } from 'vitest'
-import { tokenizer, TokenTypes } from '../src/tokenizer'
+import { TokenTypes } from '../src/helper'
+import { tokenizer } from '../src/tokenizer'
 test('tokenizer', () => {
   const code = `(add 2 (subtract 4 2))`
   const tokens = [
