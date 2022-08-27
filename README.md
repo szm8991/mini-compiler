@@ -7,5 +7,5 @@
 - [x] tokenize
 - [x] parser
 - [x] tranverser
-- [ ] transformer
-- [ ] codegen
+- [x] transformer
+- [x] codegen
