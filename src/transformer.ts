@@ -1,4 +1,10 @@
-import { CallExpressionStatement, createRootNode, NodeTypes, RootNode } from './helper'
+import {
+  CallExpressionStatement,
+  createRootNode,
+  ExpressionStatement,
+  NodeTypes,
+  RootNode,
+} from './helper'
 import { traverser, Visitor } from './traverser'
 export interface TransformOptions {
   visitor: Visitor
@@ -18,8 +24,8 @@ export function transformerLISP2C(ast: RootNode) {
       CallExpression: {
         enter(node, parent) {
           if (node.type === NodeTypes.CallExpression) {
-            let expression: any = {
-              type: 'CallExpression',
+            let expression: CallExpressionStatement | ExpressionStatement = {
+              type: NodeTypes.CallExpressionStatement,
               callee: {
                 type: 'Identifier',
                 name: node.name,
@@ -29,7 +35,7 @@ export function transformerLISP2C(ast: RootNode) {
             node.context = expression.arguments
             if (parent?.type !== NodeTypes.CallExpression) {
               expression = {
-                type: 'ExpressionStatement',
+                type: NodeTypes.ExpressionStatement,
                 expression,
               }
             }

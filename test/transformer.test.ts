@@ -38,7 +38,7 @@ test('transformer', () => {
       {
         type: 'ExpressionStatement',
         expression: {
-          type: 'CallExpression',
+          type: 'CallExpressionStatement',
           callee: {
             type: 'Identifier',
             name: 'add',
@@ -49,7 +49,7 @@ test('transformer', () => {
               value: '2',
             },
             {
-              type: 'CallExpression',
+              type: 'CallExpressionStatement',
               callee: {
                 type: 'Identifier',
                 name: 'subtract',

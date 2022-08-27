@@ -16,6 +16,7 @@ export enum NodeTypes {
   StringLiteral = 'StringLiteral',
   CallExpression = 'CallExpression',
   ExpressionStatement = 'ExpressionStatement',
+  CallExpressionStatement = 'CallExpressionStatement',
 }
 
 export type ChildNode =
@@ -23,6 +24,7 @@ export type ChildNode =
   | CallExpressionNode
   | StringLiteralNode
   | ExpressionStatement
+  | CallExpressionStatement
 
 export interface Node {
   type: NodeTypes
@@ -48,10 +50,10 @@ export interface Callee {
   type: string
   name: string
 }
-export interface CallExpressionStatement {
-  type: 'CallExpression'
+export interface CallExpressionStatement extends Node {
+  type: NodeTypes.CallExpressionStatement
   callee: Callee
-  arguments: (NumberLiteralNode | Callee)[]
+  arguments: (NumberLiteralNode | CallExpressionStatement)[]
 }
 export interface ExpressionStatement extends Node {
   type: NodeTypes.ExpressionStatement
