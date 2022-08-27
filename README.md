@@ -4,8 +4,8 @@
 
 ## todo list
 
-- [ ] tokenize
-- [ ] parser
+- [x] tokenize
+- [x] parser
 - [ ] tranverser
 - [ ] transformer
 - [ ] codegen
