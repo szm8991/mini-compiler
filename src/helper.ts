@@ -15,9 +15,14 @@ export enum NodeTypes {
   Program = 'Program',
   StringLiteral = 'StringLiteral',
   CallExpression = 'CallExpression',
+  ExpressionStatement = 'ExpressionStatement',
 }
 
-export type ChildNode = NumberLiteralNode | CallExpressionNode | StringLiteralNode
+export type ChildNode =
+  | NumberLiteralNode
+  | CallExpressionNode
+  | StringLiteralNode
+  | ExpressionStatement
 
 export interface Node {
   type: NodeTypes
@@ -38,6 +43,19 @@ export interface CallExpressionNode extends Node {
   params: ChildNode[]
   type: NodeTypes.CallExpression
   context?: ChildNode[]
+}
+export interface Callee {
+  type: string
+  name: string
+}
+export interface CallExpressionStatement {
+  type: 'CallExpression'
+  callee: Callee
+  arguments: (NumberLiteralNode | Callee)[]
+}
+export interface ExpressionStatement extends Node {
+  type: NodeTypes.ExpressionStatement
+  expression: CallExpressionStatement
 }
 
 export interface RootNode extends Node {

@@ -37,10 +37,10 @@ test('traverser', () => {
   const visitor: Visitor = {
     Program: {
       enter(node, parent) {
-        callCounts.push(['program-enter', node.type, ''])
+        callCounts.push(['program-enter', node.type, parent?.type ?? ''])
       },
       exit(node, parent) {
-        callCounts.push(['program-exit', node.type, ''])
+        callCounts.push(['program-exit', node.type, parent?.type ?? ''])
       },
     },
 
