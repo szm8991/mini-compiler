@@ -11,6 +11,8 @@ export interface Visitor {
   NumberLiteral?: VisitorOption
   CallExpression?: VisitorOption
   StringLiteral?: VisitorOption
+  CallExpressionStatement?: VisitorOption
+  ExpressionStatement?: VisitorOption
 }
 
 export function traverser(rootNode: RootNode, visitor: Visitor) {
