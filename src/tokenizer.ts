@@ -1,14 +1,4 @@
-export enum TokenTypes {
-  Paren,
-  Name,
-  Number,
-  String,
-}
-
-export interface Token {
-  type: TokenTypes
-  value: string
-}
+import { Token, TokenTypes } from './helper'
 
 export function tokenizer(code: string) {
   const tokens: Token[] = []

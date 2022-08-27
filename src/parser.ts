@@ -3,8 +3,9 @@ import {
   createStringLiteralNode,
   createNumberLiteralNode,
   createCallExpression,
+  Token,
+  TokenTypes,
 } from './helper'
-import { Token, TokenTypes } from './tokenizer'
 
 export function parser(tokens: Token[]) {
   const root = createRootNode()

@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { NodeTypes } from '../src/helper'
+import { NodeTypes, TokenTypes } from '../src/helper'
 import { parser } from '../src/parser'
-import { TokenTypes } from '../src/tokenizer'
 
 describe('parser', () => {
   it('parser tokens to ast', () => {

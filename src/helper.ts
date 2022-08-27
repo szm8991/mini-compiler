@@ -1,3 +1,15 @@
+export enum TokenTypes {
+  Paren,
+  Name,
+  Number,
+  String,
+}
+
+export interface Token {
+  type: TokenTypes
+  value: string
+}
+
 export enum NodeTypes {
   NumberLiteral = 'NumberLiteral',
   Program = 'Program',
