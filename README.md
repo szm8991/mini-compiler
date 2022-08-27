@@ -6,6 +6,6 @@
 
 - [x] tokenize
 - [x] parser
-- [ ] tranverser
+- [x] tranverser
 - [ ] transformer
 - [ ] codegen

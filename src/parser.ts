@@ -36,7 +36,7 @@ export function parser(tokens: Token[]) {
       return node
     }
 
-    throw new Error(`识别不了的 token: ${token}`)
+    throw new Error(`unknown token: ${token}`)
   }
 
   while (current < tokens.length) {
